@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-import numpy as np
+"""Bracin The Elements."""
+
 
 def np_elementwise(mat1, mat2):
     """
@@ -7,9 +8,10 @@ def np_elementwise(mat1, mat2):
 
     Args:
         mat1 (numpy.ndarray): The first array.
-        mat2 (numpy.ndarray or int/float): The second array or a scalar.
+        mat2 (numpy.ndarray): The second array.
 
     Returns:
-        tuple: A tuple containing the element-wise sum, difference, product, and quotient.
+        tuple: A tuple containing the element-wise sum, difference,
+        product, and quotient.
     """
-    return (np.add(mat1, mat2), np.subtract(mat1, mat2), np.multiply(mat1, mat2), np.divide(mat1, mat2))
+    return (mat1 + mat2, mat1 - mat2, mat1 * mat2, mat1 / mat2)

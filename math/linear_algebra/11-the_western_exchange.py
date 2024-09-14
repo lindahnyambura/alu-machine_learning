@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import numpy as np
+"""The Western Exchange."""
 
 def np_transpose(matrix):
     """
@@ -11,4 +11,4 @@ def np_transpose(matrix):
     Returns:
         numpy.ndarray: The transposed array.
     """
-    return np.transpose(matrix)
+    return matrix.T

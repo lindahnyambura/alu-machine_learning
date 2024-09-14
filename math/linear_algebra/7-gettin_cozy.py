@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""Concatenate 2D matrices along a specific axis."""
+
+
 def cat_matrices2D(mat1, mat2, axis=0):
     """
     Concatenates two 2D matrices along a specific axis.
@@ -6,10 +9,12 @@ def cat_matrices2D(mat1, mat2, axis=0):
     Args:
         mat1 (list of list of int/float): The first 2D matrix.
         mat2 (list of list of int/float): The second 2D matrix.
-        axis (int): The axis along which to concatenate the matrices (0 for rows, 1 for columns).
+        axis (int): The axis along which to concatenate the 
+        matrices (0 for rows, 1 for columns).
 
     Returns:
-        list of list of int/float: A new 2D matrix containing the concatenated matrices.
+        list of list of int/float: A new 2D matrix containing 
+        the concatenated matrices.
         None: If the matrices cannot be concatenated.
     """
     if axis == 0:

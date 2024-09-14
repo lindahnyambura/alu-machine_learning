@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""Adds two arrays element-wise."""
+
+
 def add_arrays(arr1, arr2):
     """
     Adds two arrays element-wise.
@@ -8,7 +11,8 @@ def add_arrays(arr1, arr2):
         arr2 (list of int/float): The second array.
 
     Returns:
-        list of int/float: A new list containing the element-wise sum of arr1 and arr2.
+        list of int/float:new list containing the element sum of 
+        arr1 and arr2.
         None: If arr1 and arr2 are not the same shape.
     """
     if len(arr1) != len(arr2):

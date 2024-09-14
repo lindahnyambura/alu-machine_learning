@@ -10,7 +10,7 @@ def np_shape(matrix):
         matrix (numpy.ndarray): The input array.
 
     Returns:
-        tuple: A tuple of integers representing the shape 
+        tuple: A tuple of integers representing the shape
         of the array.
     """
     return matrix.shape

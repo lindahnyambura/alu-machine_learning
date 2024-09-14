@@ -11,7 +11,7 @@ def add_arrays(arr1, arr2):
         arr2 (list of int/float): The second array.
 
     Returns:
-        list of int/float:new list containing the element sum of 
+        list of int/float:new list containing the element sum of
         arr1 and arr2.
         None: If arr1 and arr2 are not the same shape.
     """

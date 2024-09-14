@@ -13,7 +13,7 @@ def cat_matrices2D(mat1, mat2, axis=0):
         matrices (0 for rows, 1 for columns).
 
     Returns:
-        list of list of int/float: A new 2D matrix containing 
+        list of list of int/float: A new 2D matrix containing
         the concatenated matrices.
         None: If the matrices cannot be concatenated.
     """

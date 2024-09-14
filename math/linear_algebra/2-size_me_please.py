@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Size Me Please."""
 def matrix_shape(matrix):
     """
     Calculates the shape of a matrix.

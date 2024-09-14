@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+"""Cats Got Your Tongue."""
 import numpy as np
+
 
 def np_cat(mat1, mat2, axis=0):
     """
@@ -8,7 +10,8 @@ def np_cat(mat1, mat2, axis=0):
     Args:
         mat1 (numpy.ndarray): The first matrix.
         mat2 (numpy.ndarray): The second matrix.
-        axis (int): The axis along which to concatenate the matrices (default is 0).
+        axis (int): The axis along which to concatenate
+        the matrices (default is 0).
 
     Returns:
         numpy.ndarray: The concatenated matrix.

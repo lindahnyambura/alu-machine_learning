@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
-""" 17-integrate.py """
+""" Integrate a polynomial """
+
 
 def poly_integral(poly, C=0):
-    if not isinstance(poly, list) or not all(isinstance(coef, (int, float)) for coef in poly):
+    """
+    Returns the integral of a polynomial.
+    """
+    integral = []
+
+    if not isinstance(poly, list) or len(poly) == 0 or not isinstance(C, int):
         return None
-    if not isinstance(C, (int, float)):
-        return None
     
-    integral = [C]  # Start with the integration constant
-    for i, coef in enumerate(poly):
-        integral.append(coef / (i + 1))
-    
-    # Convert coefficients to integers if they are whole numbers
-    integral = [int(coef) if coef.is_integer() else coef for coef in integral]
-    
-    return integral
+    for i in range(len(poly)-1, 0, -1):
+        integral.append(poly[i]/(i+1))
+
+    integral.append(poly[0])
+    integral.append(C)
+
+    if len(poly) == 1 and poly[0] == 0:
+        integral = [C]
+    for i in range(len(integral)):
+        if integral[i] % 1 == 0:
+            integral[i] = int(integral[i])
+
+    return integral[::-1]

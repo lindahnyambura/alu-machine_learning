@@ -10,7 +10,6 @@ def poly_integral(poly, C=0):
 
     if not isinstance(poly, list) or len(poly) == 0 or not isinstance(C, int):
         return None
-    
     for i in range(len(poly)-1, 0, -1):
         integral.append(poly[i]/(i+1))
 

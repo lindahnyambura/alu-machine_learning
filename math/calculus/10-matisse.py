@@ -3,12 +3,12 @@
 """Matisse's method to calculate the derivative of a polynomial."""
 
 def poly_derivative(poly):
-    if not isinstance(poly, list) or not all(isinstance(coef, (int, float)) for coef in poly):
+    """Returns the derivative of a polynomial."""
+
+    derivative = []
+
+    if not isinstance(poly, list) or len(poly) == 0:
         return None
-    
-    if len(poly) == 1:
-        return [0]
-    
-    derivative = [coef * i for i, coef in enumerate(poly) if i > 0]
-    
-    return derivative if derivative else [0]
+    for i in range(len(poly) - 1):
+        derivative.append(poly[i] * (i + 1))
+    return derivative

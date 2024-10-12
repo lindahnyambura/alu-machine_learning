@@ -102,3 +102,11 @@ Where:
     - Calculates the PDF value using the normal distribution formula.
     - Returns the calculated PDF value.
     - If the standard deviation is not positive, it returns 0 (although this should be handled by the constructor).
+
+4. **CDF Method**:
+- Method cdf(self, x):
+    - Takes a float x as an argument.
+    - Computes the z-score of x.
+    - Uses the error function to calculate the CDF value.
+    - Returns the calculated CDF value.
+    *- erf thing threw me tf off* (editor's note)

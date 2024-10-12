@@ -26,4 +26,18 @@ class Exponential:
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
 
-            self.lambtha = float(1 / sum(data) / len(data))
+            mean = float(sum(data) / len(data))
+            self.lambtha = float(1 / mean)
+    
+    def pdf(self, x):
+        """
+        calculates the value of the PDF for a given number
+        """
+        if x < 0:
+            return 0
+
+        lambtha = self.lambtha
+        e = 2.7182818285
+        pdf_value = (lambtha * e ** (-lambtha * x))
+
+        return pdf_value

@@ -55,7 +55,8 @@ class Binomial:
 
         binomial_coeff = self.binomial_coefficient(self.n, k)
 
-        pmf_value = binomial_coeff * (self.p ** k) * ((1 - self.p) ** (self.n - k))
+        pmf_value = (binomial_coeff * (self.p ** k) * 
+                     ((1 - self.p) ** (self.n - k)))
 
         return pmf_value
 
@@ -75,3 +76,18 @@ class Binomial:
         for i in range(2, n + 1):
             fact *= i
         return fact
+
+    def cdf(self, k):
+        """
+        calculates the value of the CDF for a given number of successes
+        """
+        k = int(k)
+        if k < 0:
+            return 0
+
+        if k > self.n:
+            return 1
+
+        cdf_value = sum(self.pmf(i) for i in range(k + 1))
+
+        return cdf_value

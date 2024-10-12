@@ -33,6 +33,7 @@ class Poisson:
         calculates the value of the PMF for a given number of successes
         """
 
+        k = int(k)
         if k < 0:
             return 0
 
@@ -48,6 +49,7 @@ class Poisson:
         calculates the factorial of a given number
         """
 
+        n = int(n)
         if n == 0 or n == 1:
             return 1
 

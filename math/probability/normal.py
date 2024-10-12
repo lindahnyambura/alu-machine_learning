@@ -77,7 +77,8 @@ class Normal:
 
         # a polynomial approximation
         t = 1.0 / (1.0 + p * z)
-        erf_value = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * (2.7182818285 ** (-z * z))
+        erf_value = (1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) *
+                     t) * (2.71822818285 ** (-z * z))
 
         return sign * erf_value
 
@@ -85,5 +86,7 @@ class Normal:
         """
         calculates the value of the CDF for a given number
         """
+        if x < 0:
+            return 0
         z = self.z_score(x)
         return 0.5 * (1 + self.erf(z / 2 ** 0.5))

@@ -110,3 +110,24 @@ Where:
     - Uses the error function to calculate the CDF value.
     - Returns the calculated CDF value.
     *- erf thing threw me tf off* (editor's note)
+
+# Binomial Distribution
+- The binomial distribution is a discrete probability distribution that describes the number of successes in a fixed number of independent trials, each with the same probability of success. It’s commonly used in scenarios where there are two possible outcomes (success or failure) for each trial
+
+## Binomial Class Implementation
+1. **out of puns**
+    1. Approach
+        Attributes:
+
+            - n: The number of Bernoulli trials (integer).
+            - p: The probability of success (float).
+    2. Conditions:
+
+        - If data is provided, we estimate n and p from the data.
+        - If data is not provided, use the given values of n and p.
+        - Raise appropriate errors for invalid values of n and p.
+    3. Steps for Estimating from Data:
+
+        - Estimate p as the ratio of the number of successes to the total number of trials.
+        - Use p to calculate n (rounded).
+        - Recalculate p using the new value of n.

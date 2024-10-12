@@ -55,7 +55,7 @@ class Binomial:
 
         binomial_coeff = self.binomial_coefficient(self.n, k)
 
-        pmf_value = (binomial_coeff * (self.p ** k) * 
+        pmf_value = (binomial_coeff * (self.p ** k) *
                      ((1 - self.p) ** (self.n - k)))
 
         return pmf_value

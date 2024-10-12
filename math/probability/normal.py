@@ -60,33 +60,11 @@ class Normal:
         coefficient = 1 / (self.stddev * (2 * 3.1415926536) ** 0.5)
         return coefficient * (2.7182818285 ** exponent)
 
-    def erf(self, z):
-        """
-        calculates the error function
-        """
-        # coefficients for the approximation of the erf
-        a1 = 0.254829592
-        a2 = -0.284496736
-        a3 = 1.421413741
-        a4 = -1.453152027
-        a5 = 1.061405429
-        p = 0.3275911
-
-        sign = 1 if z >= 0 else -1
-        z = abs(z) / 1.414213562373095  # 1/sqrt(2)
-
-        # a polynomial approximation
-        t = 1.0 / (1.0 + p * z)
-        erf_value = (1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) *
-                     t) * (2.71822818285 ** (-z * z))
-
-        return sign * erf_value
-
     def cdf(self, x):
         """
         calculates the value of the CDF for a given number
         """
-        if x < 0:
-            return 0
         z = self.z_score(x)
-        return 0.5 * (1 + self.erf(z / 2 ** 0.5))
+        t = z - (z ** 3) / 3 + (z ** 5) / 10 - (z ** 7) / 42 + (z ** 9) / 216
+        cdf = 0.5 * (1 + (2 / (3.1415926536 ** 0.5)) * t)
+        return cdf

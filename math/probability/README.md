@@ -6,13 +6,10 @@
 Poisson distribution models the probability of a given number of events occurring within a fixed interval of time or space, given a constant average rate (λ or lambtha).
 
 Formula for Poisson Probability Mass Function (PMF):
-$$
-P(X = k) = \frac{{\lambda^k e^{-\lambda}}}{{k!}}
-$$
-
+(google to get reference, I'm not doing the latex ting)
 where:
 - \( P(X = k) \) is the probability of observing \( k \) events.
-- \( \lambda \) (lambda) is the average number of events in the interval.
+- (lambda) is the average number of events in the interval.
 - \( k \) is the number of occurrences (events).
 - \( e \) is the base of the natural logarithm (approximately equal to 2.71828).
 - \( k! \) is the factorial of \( k \).

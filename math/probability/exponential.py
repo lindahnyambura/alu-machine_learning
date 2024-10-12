@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 """
-This module contains the class Exponential for modeling exponential distributions
+This module contains the class Exponential for
+modeling exponential distributions
 """
 
 
@@ -24,4 +25,4 @@ class Exponential:
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
 
-            self.lambtha = float(sum(data) / len(data))
+            self.lambtha = float(1/ sum(data) / len(data))

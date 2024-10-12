@@ -26,7 +26,7 @@ class Normal:
                 raise TypeError("data must be a list")
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
-            
+
             mean = float(sum(data) / len(data))
             self.mean = float(mean)
             self.stddev = float(self.calculate_stddev(data, self.mean))
@@ -37,3 +37,15 @@ class Normal:
         """
         variance = sum((x - mean) ** 2 for x in data) / len(data)
         return (variance ** 0.5)
+
+    def z_score(self, x):
+        """
+        calculates the z-score
+        """
+        return (x - self.mean) / self.stddev
+
+    def x_value(self, z):
+        """
+        calculates the x-value
+        """
+        return (z * self.stddev) + self.mean

@@ -59,3 +59,17 @@ class Poisson:
             factorial_value *= i
 
         return factorial_value
+
+    def cdf(self, k):
+        """
+        calculates the value of the CDF for a given number of successes
+        """
+
+        k = int(k)
+        if k < 0:
+            return 0
+
+        # calculate the cdf
+        cdf_value = sum(self.pmf(i) for i in range(k + 1))
+
+        return cdf_value

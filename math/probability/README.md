@@ -39,3 +39,19 @@ We provided two ways to initialize the Poisson distribution:
 4. **CDF Method**:
 - The CDF gives the cumulative probability that the number of occurrences will be less than or equal to k
 - It is computed by summing the PMF values from 0 to k.
+
+# Exponential Distribution
+The Exponential Distribution is a continuous probability distribution often used to model the time between independent events that occur at a constant average rate. It's widely applicable in fields like reliability engineering, queuing theory, and survival analysis.
+
+## Exponential Class Implementation
+
+1. (*with a British accent*) **Init?**
+same thing as Poission, but when calculating lambtha, we will need to take the inverse of the mean of the data because mu = 1 / lambda soo...
+
+2. **PDF Method**
+- check if x is out of range
+- we mash up the formula
+
+3. **CDF Method**
+- check if x is out of range
+- cook the formula

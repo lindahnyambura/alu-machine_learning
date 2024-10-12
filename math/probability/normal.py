@@ -49,3 +49,13 @@ class Normal:
         calculates the x-value
         """
         return (z * self.stddev) + self.mean
+
+    def pdf(self, x):
+        """
+        calculates the value of the PDF for a given number
+        """
+        if self.stddev <= 0:
+            return 0
+        exponent = -((x - self.mean) ** 2) / (2 * (self.stddev ** 2))
+        coefficient = 1 / (self.stddev * (2 * 3.1415926536) ** 0.5)
+        return coefficient * (2.7182818285 ** exponent)

@@ -94,3 +94,11 @@ Where:
 
         - This method takes a float z as an argument and calculates the corresponding x-value using the provided z-score, mean, and standard deviation. 
         - It returns the calculated x-value.
+
+3. **PDF Method**
+- google the formula bro
+- Method pdf(self, x):
+    - Takes a float x as an argument.
+    - Calculates the PDF value using the normal distribution formula.
+    - Returns the calculated PDF value.
+    - If the standard deviation is not positive, it returns 0 (although this should be handled by the constructor).

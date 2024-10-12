@@ -28,7 +28,7 @@ class Exponential:
 
             mean = float(sum(data) / len(data))
             self.lambtha = float(1 / mean)
-    
+
     def pdf(self, x):
         """
         calculates the value of the PDF for a given number
@@ -41,3 +41,16 @@ class Exponential:
         pdf_value = (lambtha * e ** (-lambtha * x))
 
         return pdf_value
+
+    def cdf(self, x):
+        """
+        calculates the value of the CDF for a given number
+        """
+        if x < 0:
+            return 0
+
+        lambtha = self.lambtha
+        e = 2.7182818285
+        cdf_value = 1 - e ** (-lambtha * x)
+
+        return cdf_value

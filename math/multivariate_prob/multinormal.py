@@ -36,3 +36,32 @@ class MultiNormal:
 
         # covariance matrix
         self.cov = (X_centered @ X_centered.T) / (n - 1)
+
+    def pdf(self, x):
+        """
+        calculates the pdf of a multivariate normal distribution
+        """
+
+        # check if x is a numpy.ndarray
+        if not isinstance(x, np.ndarray):
+            raise TypeError("x must be a numpy.ndarray")
+
+        # check if x has the right shape
+        d, _ = self.mean.shape
+        if x.shape != (d, 1):
+            raise ValueError(f"x must have the shape ({d}, 1)")
+
+        # calculate the pdf
+        det_cov = np.linalg.det(self.cov)  # determinant of the covariance matrix
+        inv_cov = np.linalg.inv(self.cov)  # inverse of the covariance matrix
+
+        # calculate the normalization constant
+        denominator = np.sqrt(((2 * np.pi) ** d) * det_cov)
+
+        # calculate the exponent
+        x_centered = x - self.mean
+        exponent = np.exp(-0.5 * (x_centered.T @ inv_cov @ x_centered))
+
+        # final pdf value
+        pdf = (1 / denominator) * np.exp(exponent)
+        return float(pdf)

@@ -7,6 +7,7 @@ calculates the correlation matrix from a covariance matrix
 
 import numpy as np
 
+
 def correlation(C):
     """
     calculates the correlation matrix from a covariance matrix
@@ -27,6 +28,6 @@ def correlation(C):
     denominator = np.outer(std_devs, std_devs)
 
     # correlation matrix
-    correlation_matrix = C /denominator
+    correlation_matrix = C / denominator
 
     return correlation_matrix

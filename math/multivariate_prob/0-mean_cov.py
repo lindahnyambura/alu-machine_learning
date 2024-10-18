@@ -7,6 +7,7 @@ calculates the mean and covariance matrix of a data set
 
 import numpy as np
 
+
 def mean_cov(X):
     """
     calculates the mean and covariance matrix of a data set

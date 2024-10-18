@@ -49,10 +49,10 @@ class MultiNormal:
         # check if x has the right shape
         d, _ = self.mean.shape
         if x.shape != (d, 1):
-            raise ValueError(f"x must have the shape ({d}, 1)")
+            raise ValueError("x must have the shape ({}, 1)".format(d))
 
         # calculate the pdf
-        det_cov = np.linalg.det(self.cov)  # determinant of the covariance matrix
+        det_cov = np.linalg.det(self.cov)  # determinant of the covamatrix
         inv_cov = np.linalg.inv(self.cov)  # inverse of the covariance matrix
 
         # calculate the normalization constant

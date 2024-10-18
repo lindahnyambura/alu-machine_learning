@@ -30,3 +30,6 @@ where:
 - we then validate the data
 - we calculate the mean of the dataset by averaging over the data points (along axis 1) to ensure the result is of shape `(d, 1)`
 - calculate covariance by centering the data and performing matrix multiplication, scaled by 1 / (n-1) to adjust for the number of data points
+
+
+## PDF

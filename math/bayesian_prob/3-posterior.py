@@ -31,14 +31,14 @@ def posterior(x, n, P, Pr):
         raise ValueError("All values in Pr must be in the range [0, 1]")
     if not np.isclose(np.sum(Pr), 1):
         raise ValueError("Pr must sum to 1")
-    
+
     # Calculate the likelihood for each P
     likelihoods = likelihood_module.likelihood(x, n, P)
-    
+
     # Calculate the marginal probability P(x)
     marginal_prob = marginal_module.marginal(x, n, P, Pr)
-    
+
     # Calculate the posterior probability using Bayes' Theorem
     posteriors = (likelihoods * Pr) / marginal_prob
-    
+
     return posteriors

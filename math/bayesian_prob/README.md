@@ -71,7 +71,7 @@ This task calculates the posterior probability for the various hypothetical prob
 
 ### Task 5: Posterior Probability for a Specific Range
 
-**File:** `4-posterior.py`
+**File:** `100-continuous.py`
 
 This task calculates the posterior probability that the probability of developing severe side effects falls within a specified range, assuming a uniform prior distribution.
 

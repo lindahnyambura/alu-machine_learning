@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
 
 """
-calculates the marginal probability of obtaining
-the data given various hypothetical probabilities
+Calculates the posterior probability using Bayes' Theorem
 """
 
 
 import numpy as np
-intersection_module = __import__('1-intersection')
+likelihood_module = __import__('0-likelihood')
+marginal_module = __import__('2-marginal')
 
 
-def marginal(x, n, P, Pr):
+def posterior(x, n, P, Pr):
     """
-    calculates the marginal probability of obtaining
-    the data given various hypothetical probabilities
+    Calculates the posterior probability using Bayes' Theorem
     """
     if not isinstance(n, int) or n <= 0:
         raise ValueError("n must be a positive integer")
@@ -32,11 +31,14 @@ def marginal(x, n, P, Pr):
         raise ValueError("All values in Pr must be in the range [0, 1]")
     if not np.isclose(np.sum(Pr), 1):
         raise ValueError("Pr must sum to 1")
-
-    # Calculate the intersection (Likelihood * Prior) for each P
-    intersection_values = intersection_module.intersection(x, n, P, Pr)
-
-    # Marginal probability is the sum of the intersection values
-    marginal_probability = np.sum(intersection_values)
-
-    return marginal_probability
+    
+    # Calculate the likelihood for each P
+    likelihoods = likelihood_module.likelihood(x, n, P)
+    
+    # Calculate the marginal probability P(x)
+    marginal_prob = marginal_module.marginal(x, n, P, Pr)
+    
+    # Calculate the posterior probability using Bayes' Theorem
+    posteriors = (likelihoods * Pr) / marginal_prob
+    
+    return posteriors

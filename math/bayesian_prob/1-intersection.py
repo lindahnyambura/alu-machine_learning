@@ -8,6 +8,7 @@ calculates the intersection of multiple probabilities
 import numpy as np
 likelihood_module = __import__('0-likelihood')
 
+
 def intersection(x, n, P, Pr):
     """
     calculates the intersection of multiple probabilities

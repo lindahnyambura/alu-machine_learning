@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
 
 """
-calculates the intersection of multiple probabilities
+calculates the marginal probability of obtaining
+the data given various hypothetical probabilities
 """
 
 
 import numpy as np
-likelihood_module = __import__('0-likelihood')
+intersection_module = __import__('1-intersection')
 
-def intersection(x, n, P, Pr):
-    """
-    calculates the intersection of multiple probabilities
-    """
 
+def marginal(x, n, P, Pr):
+    """
+    calculates the marginal probability of obtaining
+    the data given various hypothetical probabilities
+    """
     if not isinstance(n, int) or n <= 0:
         raise ValueError("n must be a positive integer")
     if not isinstance(x, int) or x < 0:
-        raise ValueError(("x must be an integer that"
-                          " is greater than or equal to 0"))
+        raise ValueError(("x must be an integer that is"
+                          "greater than or equal to 0"))
     if x > n:
         raise ValueError("x cannot be greater than n")
     if not isinstance(P, np.ndarray) or P.ndim != 1:
@@ -31,10 +33,10 @@ def intersection(x, n, P, Pr):
     if not np.isclose(np.sum(Pr), 1):
         raise ValueError("Pr must sum to 1")
 
-    # Calculate likelihoods using the previously defined function
-    likelihoods = likelihood_module.likelihood(x, n, P)
+    # Calculate the intersection (Likelihood * Prior) for each P
+    intersection_values = intersection_module.intersection(x, n, P, Pr)
 
-    # Calculate the intersection
-    intersection_values = likelihoods * Pr
+    # Marginal probability is the sum of the intersection values
+    marginal_probability = np.sum(intersection_values)
 
-    return intersection_values
+    return marginal_probability

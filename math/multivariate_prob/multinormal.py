@@ -60,7 +60,7 @@ class MultiNormal:
 
         # calculate the exponent
         second_term = np.dot((x - self.mean).T, inv_cov)
-        exponent = np.dot(second_term, (x - self.mean) / 2)
+        exponent = np.dot(second_term, (x - self.mean) / -2)
 
         # final pdf value
         pdf = denominator * np.exp(exponent)

@@ -55,18 +55,13 @@ class MultiNormal:
         det_cov = np.linalg.det(self.cov)  # determinant of the covamatrix
         inv_cov = np.linalg.inv(self.cov)  # inverse of the covariance matrix
 
-
-        # check if the covariance matrix is positive definite
-        if det_cov <= 0:
-            raise ValueError("Covariance matrix must be positive definite")
-
         # calculate the normalization constant
-        denominator = np.sqrt(((2 * np.pi) ** d) * det_cov)
+        denominator = 1 / ((2 * np.pi) ** (d / 2) * np.sqrt(det_cov))
 
         # calculate the exponent
-        x_centered = x - self.mean
-        exponent = np.exp(-0.5 * (x_centered.T @ inv_cov @ x_centered))
+        second_term = np.dot((x - self.mean).T, inv_cov)
+        exponent = np.dot(second_term, (x - self.mean) / 2)
 
         # final pdf value
-        pdf = (1 / denominator) * np.exp(exponent)
+        pdf = denominator * np.exp(exponent)
         return float(pdf)

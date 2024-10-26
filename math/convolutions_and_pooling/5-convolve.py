@@ -10,7 +10,7 @@ import numpy as np
 
 def convolve(images, kernels, padding='same', stride=(1, 1)):
     """
-    Performs a convolution on images using multiple kernels  
+    Performs a convolution on images using multiple kernels
     """
 
     m, h, w, c = images.shape
@@ -41,6 +41,6 @@ def convolve(images, kernels, padding='same', stride=(1, 1)):
                 j_sh = j * sw
                 region = padded_images[:, i_sh:i_sh + kh, j_sh:j_sh + kw, :]
                 convolved_arr[:, i, j, k] = np.sum(region * kernel,
-                                                axis=(1, 2, 3))
+                                                   axis=(1, 2, 3))
 
     return convolved_arr

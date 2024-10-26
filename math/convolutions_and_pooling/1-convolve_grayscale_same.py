@@ -23,16 +23,11 @@ def convolve_grayscale_same(images, kernel):
     padded_images = np.pad(images, ((0, 0), (pad_h, pad_h),
                                     (pad_w, pad_w)), mode='constant')
 
-
     convolved_images = np.zeros((m, h, w))
-
     # Loop over each image
-    for i in range(m):
-        # Perform same convolution for each image
-        for y in range(h):
-            for x in range(w):
-
-                region = padded_images[i, y:y+kh, x:x+kw]
-                convolved_images[i, y, x] = np.sum(region * kernel)
+    for i in range(h):
+        for j in range(w):
+            region = padded_images[:, i:i+kh, j:j+kw]
+            convolved_images[:, i, j] = np.sum(region * kernel, axis=(1, 2))
 
     return convolved_images

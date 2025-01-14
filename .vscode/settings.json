@@ -1,0 +1,21 @@
+{
+  "workbench.experimental.settingsProfiles.enabled": true,
+  "workbench.experimental.settingsProfiles": [
+    {
+      "id": "personal",
+      "name": "Personal",
+      "settings": {
+        "git.autofetch": true,
+        "github.user": "nyambxra"
+      }
+    },
+    {
+      "id": "work",
+      "name": "Work",
+      "settings": {
+        "git.autofetch": true,
+        "github.user": "your_work_username"
+      }
+    }
+  ]
+}
